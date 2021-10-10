@@ -53,6 +53,11 @@ nav {
                     i.icon {
                         color: $facebook;
                     }
+                    &:hover {
+                        i.icon {
+                            color: darken($facebook, 10%);
+                        }
+                    }
                 }
             }
             + li {
@@ -89,12 +94,6 @@ nav {
                 }
                 &:hover {
                     color: $primary;
-                }
-                &.facebook {
-                    > * {
-                        display: inline-block;
-                        vertical-align: middle;
-                    }
                 }
                 &.current {
                     color: $primary;

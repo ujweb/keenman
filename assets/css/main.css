@@ -5100,6 +5100,9 @@ nav ul li.facebook a > * {
 nav ul li.facebook a i.icon {
   color: #1877f2;
 }
+nav ul li.facebook a:hover i.icon {
+  color: #0b5fcc;
+}
 @media screen and (max-width: 1023px) {
   nav ul li + li {
     border-top: 1px solid #143063;
@@ -5142,10 +5145,6 @@ nav ul li a::before {
 }
 nav ul li a:hover {
   color: #143063;
-}
-nav ul li a.facebook > * {
-  display: inline-block;
-  vertical-align: middle;
 }
 nav ul li a.current {
   color: #143063;
