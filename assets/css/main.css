@@ -4957,6 +4957,7 @@ a.logo {
 }
 a.logo img {
   margin-right: 0.5rem;
+  width: 2.25rem;
   height: 2.25rem;
 }
 a.logo span {
@@ -5165,6 +5166,7 @@ footer .logo {
 }
 footer .logo img {
   margin-right: 0.5rem;
+  width: 1.5625rem;
   height: 1.5625rem;
 }
 footer .logo span {
@@ -5991,6 +5993,7 @@ footer .col-md-7 {
 }
 .contact-page .map .contact-block .contact-logo img {
   margin-right: 0.5rem;
+  width: 2rem;
   height: 2rem;
 }
 .contact-page .map .contact-block .contact-logo span {
