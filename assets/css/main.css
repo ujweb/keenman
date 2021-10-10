@@ -4951,12 +4951,12 @@ header .container {
 }
 
 a.logo {
-  display: grid;
-  grid-template-columns: 2.25rem auto;
-  grid-gap: 0.5rem;
+  display: flex;
+  align-items: flex-start;
   color: #143063;
 }
 a.logo img {
+  margin-right: 0.5rem;
   height: 2.25rem;
 }
 a.logo span {
@@ -5159,12 +5159,12 @@ nav ul li a.current::before {
 }
 
 footer .logo {
-  display: inline-grid;
-  grid-template-columns: 1.5625rem auto;
-  grid-gap: 0.5rem;
+  display: flex;
+  align-items: flex-start;
   color: #fff;
 }
 footer .logo img {
+  margin-right: 0.5rem;
   height: 1.5625rem;
 }
 footer .logo span {
@@ -5985,10 +5985,12 @@ footer .col-md-7 {
 }
 @media screen and (min-width: 1024px) {
   .contact-page .map .contact-block .contact-logo {
-    display: inline-grid;
+    display: flex;
+    align-items: flex-start;
   }
 }
 .contact-page .map .contact-block .contact-logo img {
+  margin-right: 0.5rem;
   height: 2rem;
 }
 .contact-page .map .contact-block .contact-logo span {

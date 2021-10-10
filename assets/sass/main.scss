@@ -547,9 +547,11 @@
                 grid-gap: 0.5rem;
                 color: $white;
                 @media screen and (min-width: 1024px) {
-                    display: inline-grid;
+                    display: flex;
+                    align-items: flex-start;
                 }
                 img {
+                    margin-right: 0.5rem;
                     height: 2rem;
                 }
                 span {

@@ -1,10 +1,10 @@
 footer {
     .logo {
-        display: inline-grid;
-        grid-template-columns: 1.5625rem auto;
-        grid-gap: 0.5rem;
+        display: flex;
+        align-items: flex-start;
         color: $white;
         img {
+            margin-right: 0.5rem;
             height: 1.5625rem;
         }
         span {

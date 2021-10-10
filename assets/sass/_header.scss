@@ -20,11 +20,11 @@ header {
 }
 
 a.logo {
-    display: grid;
-    grid-template-columns: 2.25rem auto;
-    grid-gap: 0.5rem;
+    display: flex;
+    align-items: flex-start;
     color: $primary;
     img {
+        margin-right: 0.5rem;
         height: 2.25rem;
     }
     span {
