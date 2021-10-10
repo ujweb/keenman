@@ -1,0 +1,45 @@
+footer {
+    .logo {
+        display: inline-grid;
+        grid-template-columns: 1.5625rem auto;
+        grid-gap: 0.5rem;
+        color: $white;
+        img {
+            height: 1.5625rem;
+        }
+        span {
+            display: block;
+            font-weight: 500;
+            line-height: 1;
+            &.zh {
+                font-size: 14px;
+                letter-spacing: 0.225em;
+            }
+            &.en {
+                font-size: 12px;
+                transform-origin: left;
+                transform: scale(0.75);
+            }
+        }
+    }
+    .container-fluid {
+        font-size: 00.75rem;
+        letter-spacing: 0.1em;
+    }
+    .col-md-7 {
+        font-size: 0.875rem;
+        @media screen and (min-width: 768px) {
+            font-size: 1rem;
+        }
+        a {
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+            @media screen and (min-width: 768px) {
+                padding-left: 10px;
+                margin-left: 10px;
+                border-left: 1px solid $white;
+            }
+        }
+    }
+}

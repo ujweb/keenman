@@ -1,0 +1,112 @@
+$icomoon-font-family: "keenman" !default;
+$icomoon-font-path: "../fonts" !default;
+
+$icon-mail: "\e90b";
+$icon-cancel: "\e910";
+$icon-arrow-up: "\e906";
+$icon-arrow-right: "\e907";
+$icon-arrow-left: "\e908";
+$icon-arrow-down: "\e909";
+$icon-location: "\e90a";
+$icon-facebook-f: "\e904";
+$icon-envelope: "\e90c";
+$icon-phone: "\e905";
+$icon-instagram: "\e900";
+$icon-youtube: "\e901";
+$icon-line: "\e902";
+$icon-facebook: "\e903";
+
+@font-face {
+	font-family: '#{$icomoon-font-family}';
+	src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?zg0jae');
+	src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?zg0jae#iefix') format('embedded-opentype'),
+		 url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?zg0jae') format('truetype'),
+		 url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?zg0jae') format('woff'),
+		 url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?zg0jae##{$icomoon-font-family}') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: '#{$icomoon-font-family}' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mail {
+	&:before {
+		content: $icon-mail; 
+	}
+}
+.icon-cancel {
+	&:before {
+		content: $icon-cancel; 
+	}
+}
+.icon-arrow-up {
+	&:before {
+		content: $icon-arrow-up; 
+	}
+}
+.icon-arrow-right {
+	&:before {
+		content: $icon-arrow-right; 
+	}
+}
+.icon-arrow-left {
+	&:before {
+		content: $icon-arrow-left; 
+	}
+}
+.icon-arrow-down {
+	&:before {
+		content: $icon-arrow-down; 
+	}
+}
+.icon-location {
+	&:before {
+		content: $icon-location; 
+	}
+}
+.icon-facebook-f {
+	&:before {
+		content: $icon-facebook-f; 
+	}
+}
+.icon-envelope {
+	&:before {
+		content: $icon-envelope; 
+	}
+}
+.icon-phone {
+	&:before {
+		content: $icon-phone; 
+	}
+}
+.icon-instagram {
+	&:before {
+		content: $icon-instagram; 
+	}
+}
+.icon-youtube {
+	&:before {
+		content: $icon-youtube; 
+	}
+}
+.icon-line {
+	&:before {
+		content: $icon-line; 
+	}
+}
+.icon-facebook {
+	&:before {
+		content: $icon-facebook; 
+	}
+}

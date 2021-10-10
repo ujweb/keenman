@@ -1,0 +1,237 @@
+$gutter-width: 40px;
+$grid-sum: 12;
+
+$grid-breakpoints: (
+	"": false,
+	xs: 360px,
+	sm: 414px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1366px,
+);
+
+$aligns: left, center, right;
+$displays: block, inline, inline-block, none, flex, table;
+$lineHeights: 10, 15, 20;
+$spacies: (
+	"0": 0px,
+	"5": 5px,
+	"10": 10px,
+	"15": 15px,
+	"20": 20px,
+	"30": 30px,
+	"40": 40px,
+	"50": 50px,
+	"60": 60px,
+	"auto": auto,
+);
+$letters: 0, 10, 15, 20;
+$property: "m", "p";
+$sides: "", "t", "b", "l", "r", "x", "y";
+
+%col {
+	width: 100%;
+	padding-left: $gutter-width / 2;
+	padding-right: $gutter-width / 2;
+}
+
+.container {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $gutter-width / 2;
+	padding-right: $gutter-width / 2;
+	@media screen and (min-width: 1140px) {
+		max-width: 980px;
+	}
+	@media screen and (min-width: 1280px) {
+		max-width: 1200px;
+	}
+	@media screen and (min-width: 1366px) {
+		max-width: 1320px;
+	}
+}
+
+.container-fluid {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $gutter-width / 2;
+	padding-right: $gutter-width / 2;
+}
+  
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -($gutter-width / 2);
+	margin-right: -($gutter-width / 2);
+	&.align-items-center {
+		align-items: center;
+	}
+	&.justify-content-center {
+		justify-content: center;
+	}
+}
+
+.no-gutter {
+	margin-left: 0px;
+	margin-right: 0px;
+
+	> [class*="col-"] {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+@each $key, $value in $grid-breakpoints {
+	@for $var from 1 through $grid-sum {
+		@if not $value {
+			.col-#{$var} {
+				@extend %col;
+			}
+		} @else {
+			.col-#{$key}-#{$var} {
+				@extend %col;
+			}
+		}
+	}
+}
+@mixin generate($pro, $side, $spacValue) {
+	@if $side == "" {
+		@if $pro == "m" {
+			margin: $spacValue;
+		}
+		@if $pro == "p" {
+			padding: $spacValue;
+		}
+	}
+	@if $side == "t" {
+		@if $pro == "m" {
+			margin-top: $spacValue;
+		}
+		@if $pro == "p" {
+			padding-top: $spacValue;
+		}
+	}
+	@if $side == "b" {
+		@if $pro == "m" {
+			margin-bottom: $spacValue;
+		}
+		@if $pro == "p" {
+			padding-bottom: $spacValue;
+		}
+	}
+	@if $side == "l" {
+		@if $pro == "m" {
+			margin-left: $spacValue;
+		}
+		@if $pro == "p" {
+			padding-left: $spacValue;
+		}
+	}
+	@if $side == "r" {
+		@if $pro == "m" {
+			margin-right: $spacValue;
+		}
+		@if $pro == "p" {
+			padding-right: $spacValue;
+		}
+	}
+	@if $side == "x" {
+		@if $pro == "m" {
+			margin-left: $spacValue;
+			margin-right: $spacValue;
+		}
+		@if $pro == "p" {
+			padding-left: $spacValue;
+			padding-right: $spacValue;
+		}
+	}
+	@if $side == "y" {
+		@if $pro == "m" {
+			margin-top: $spacValue;
+			margin-bottom: $spacValue;
+		}
+		@if $pro == "p" {
+			padding-top: $spacValue;
+			padding-bottom: $spacValue;
+		}
+	}
+}
+@each $key, $value in $grid-breakpoints {
+	@if not $value {
+		@for $var from 1 to ($grid-sum+1) {
+			.col-#{$var} {
+				max-width: 100% * ($var / $grid-sum);
+				flex: 0 0 (100% * ($var / $grid-sum));
+			}
+		}
+		@each $pro in $property {
+			@each $side in $sides {
+				@each $spacKey, $spacValue in $spacies {
+					.#{$pro}#{$side}-#{$spacKey} {
+						@include generate($pro, $side, $spacValue !important);
+					}
+				}
+			}
+		}
+		@each $letter in $letters {
+			.letter-space-#{$letter} {
+				letter-spacing: $letter*0.01em;
+			}
+		}
+		@each $lineHeight in $lineHeights {
+			.line-height-#{$lineHeight} {
+				line-height: $lineHeight/10;
+			}
+		}
+		@each $align in $aligns {
+			.text-#{$align} {
+				text-align: #{$align};
+			}
+		}
+		@each $display in $displays {
+			.d-#{$display} {
+				display: #{$display} !important;
+			}
+		}
+	} @else {
+		@media screen and (min-width: $value) {
+			@for $var from 1 to ($grid-sum+1) {
+				.col-#{$key}-#{$var} {
+					max-width: 100% * ($var / $grid-sum);
+					flex: 0 0 (100% * ($var / $grid-sum));
+				}
+			}
+			@each $pro in $property {
+				@each $side in $sides {
+					@each $spacKey, $spacValue in $spacies {
+						.#{$pro}#{$side}-#{$key}-#{$spacKey} {
+							@include generate($pro, $side, $spacValue !important);
+						}
+					}
+				}
+			}
+			@each $letter in $letters {
+				.letter-space-#{$key}-#{$letter} {
+					letter-spacing: $letter*0.01em;
+				}
+			}
+			@each $lineHeight in $lineHeights {
+				.line-height-#{$key}-#{$lineHeight} {
+					line-height: $lineHeight/10;
+				}
+			}
+			@each $align in $aligns {
+				.text-#{$key}-#{$align} {
+					text-align: #{$align};
+				}
+			}
+			@each $display in $displays {
+				.d-#{$key}-#{$display} {
+					display: #{$display} !important;
+				}
+			}
+		}
+	}
+}

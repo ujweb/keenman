@@ -1,0 +1,51 @@
+$container: 1170px;
+$unit: 0.0625rem;
+
+//
+$fs36: 36 * $unit;  // 36px
+$fs32: 32 * $unit;  // 32px
+$fs26: 26 * $unit;  // 26px
+$fs24: 24 * $unit;  // 24px
+$fs22: 22 * $unit;  // 22px
+$fs20: 20 * $unit;  // 20px
+$fs18: 18 * $unit;  // 18px
+$fs16: 16 * $unit;  // 16px
+$fs12: 12 * $unit;  // 12px
+
+//
+$h1: $fs36;
+$h2: $fs26;
+$h3: $fs22;
+$h4: $fs20;
+$h5: $fs18;
+$h6: $fs16;
+
+//
+$h1-m: $fs32;
+$h2-m: $fs24;
+$h3-m: $fs22;
+$h4-m: $fs20;
+$h5-m: $fs18;
+$h6-m: $fs16;
+
+//
+$white:         #fff !default; //background
+$gray-100:      #F7F6F6 !default;
+$gray-200:      #E5E5E5 !default;
+$gray-300:      #9B9B9B !default;
+$gray-400:      #545454 !default;
+$gray-500:      #2C2C2C !default;
+$black:         #000 !default;
+
+//
+$primary:       #143063;
+$orange:        #FF862F;
+
+//
+$facebook:      #1877f2 !default;
+$line:          #00c200 !default;
+$instagram:     #dd2a7b !default;
+$weibo:         #e6162d !default;
+$rss:           #ff5700 !default;
+$twitter:       #00acee !default;
+$whatapp:       #4fce5d !default;

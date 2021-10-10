@@ -1,0 +1,92 @@
+header {
+    position: fixed;
+    // position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0.75rem 0;
+    background-color: $white;
+    border-bottom: 1px solid rgba($gray-100, 0.5);
+    z-index: 5;
+    @media screen and (min-width: 1024px) {
+        padding: 1.5rem 0;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+a.logo {
+    display: grid;
+    grid-template-columns: 2.25rem auto;
+    grid-gap: 0.5rem;
+    color: $primary;
+    img {
+        height: 2.25rem;
+    }
+    span {
+        display: block;
+        font-weight: 500;
+        line-height: 1;
+        &.zh {
+            font-size: 25px;
+            letter-spacing: 0.125em;
+        }
+        &.en {
+            font-size: 12px;
+            transform-origin: left;
+            transform: scale(0.83333333);
+        }
+    }
+}
+
+.hamburger {
+    position: relative;
+    width: 30px;
+    height: 23px;
+    @media screen and (min-width: 1024px) {
+        display: none;
+    }
+    span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: $black;
+        @include transition(all 0.3s);
+        + span {
+            margin-top: 7px;
+        }
+    }
+    &.active {
+        span {
+            position: absolute;
+            + span {
+                margin-top: 0;
+            }
+            &:nth-child(1) {
+                @include transform(rotate(45deg) translate(7px, 7px));
+            }
+            &:nth-child(3) {
+                @include transform(rotate(-45deg) translate(-7px, 7px));
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+}
+
+.blank {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    &.opened {
+        z-index: 5;
+    }
+}

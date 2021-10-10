@@ -1,0 +1,111 @@
+nav {
+    @media screen and (max-width: 1023px) {
+        display: none;
+        position: fixed;
+        top: 3.75rem;
+        left: 0;
+        right: 0;
+        max-height: calc(100% - 3.75rem);
+        background-color: $white;
+        overflow: scroll;
+        border: solid rgba($black, 0.2);
+        border-width: 1px 0;
+    }
+    @media screen and (min-width: 1024px) {
+        display: block !important;
+    }
+    ul {
+        @include list(0, 20px, none);
+        font-size: 0;
+        @media screen and (min-width: 1024px) {
+            padding: 0;
+        }
+        li {
+            @include transition(margin 0.3s);
+            @media screen and (max-width: 1023px) {
+                display: block;
+                max-width: 250px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            @media screen and (min-width: 1024px) {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            &.facebook {
+                &.desktop {
+                    @media screen and (max-width: 1023px) {
+                        display: none;
+                    }
+                }
+                &.mobile {
+                    @media screen and (min-width: 1024px) {
+                        display: none;
+                    }
+                }
+                a {
+                    > * {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    i.icon {
+                        color: $facebook;
+                    }
+                }
+            }
+            + li {
+                @media screen and (max-width: 1023px) {
+                    border-top: 1px solid $primary;
+                }
+                @media screen and (min-width: 1024px) {
+                    margin-left: 40px;
+                }
+            }
+            a {
+                position: relative;
+                display: block;
+                color: $gray-300;
+                font-size: $h5;
+                font-weight: 500;
+                line-height: $h2;
+                letter-spacing: 0.2em;
+                cursor: pointer;
+                @media screen and (max-width: 1023px) {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+                &::before {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: calc(100% - 0.2em);
+                    height: 1px;
+                    background-color: transparent;
+                    @media screen and (min-width: 1024px) {
+                        @include beforeafter('', block);
+                    }
+                }
+                &:hover {
+                    color: $primary;
+                }
+                &.facebook {
+                    > * {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+                &.current {
+                    color: $primary;
+                    @media screen and (min-width: 1024px) {
+                        font-size: $h3;
+                    }
+                    &::before {
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
