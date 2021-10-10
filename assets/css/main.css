@@ -5531,6 +5531,12 @@ footer .col-md-7 {
     height: 440px;
   }
 }
+@media screen and (min-width: 1024px) and (-ms-high-contrast: active), screen and (min-width: 1024px) and (-ms-high-contrast: none) {
+  .mask-intro .img img {
+    width: 506px;
+  }
+}
+
 .mask-intro .img span.number.number-1 {
   top: 8%;
   left: 23%;

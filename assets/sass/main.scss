@@ -163,6 +163,9 @@
             }
             @media screen and (min-width: 1024px) {
                 height: 440px;
+                @media screen and (-ms-high-contrast: active),(-ms-high-contrast: none) {
+                    width: 506px;
+                }
             }
         }
         span.number {
